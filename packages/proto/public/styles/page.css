@@ -12,12 +12,14 @@ body {
 
 /* typography */
 h1 {
+  font-family: var(--font-family-display);
   color: var(--color-primary);
   font-size: var(--font-size-h1);
   border-bottom: 2px solid var(--color-primary-light);
 }
 
 h2 {
+  font-family: var(--font-family-display);
   color: var(--color-primary);
   font-size: var(--font-size-h2);
 }
@@ -45,6 +47,15 @@ p {
 .content-card p strong {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+/* icons */
+svg.icon {
+  display: inline;
+  height: 1.2em;
+  width: 1.2em;
+  vertical-align: -0.2em;
+  fill: currentColor;
 }
 
 /* general navigation links */

@@ -1,0 +1,74 @@
+/* global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* typography */
+h1 {
+  color: var(--color-primary);
+  font-size: var(--font-size-h1);
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+h2 {
+  color: var(--color-primary);
+  font-size: var(--font-size-h2);
+}
+
+p {
+  font-size: var(--font-size-large);
+  color: var(--color-text-light);
+}
+
+/* content card */
+.content-card {
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+}
+
+.content-card p {
+  border-bottom: 1px solid var(--color-background);
+}
+
+.content-card p:last-child {
+  border-bottom: none;
+}
+
+.content-card p strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* general navigation links */
+a {
+  background-color: var(--color-background-card);
+  color: var(--color-link);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-card);
+}
+
+a:hover {
+  background-color: var(--color-link);
+  color: var(--color-link-hover);
+}
+
+/* back link style */
+a[href="index.html"] {
+  background-color: var(--color-primary);
+  color: var(--color-background-card);
+  font-weight: 500;
+}
+
+a[href="index.html"]:hover {
+  background-color: var(--color-primary-light);
+}

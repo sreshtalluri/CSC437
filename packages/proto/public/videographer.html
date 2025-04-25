@@ -6,35 +6,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
   <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Videographers</title>
 </head>
 <body>
-  <h1>Available Videographers</h1>
-  <ul>
-    <li>
-      <h2>Visionary Films</h2>
-      <p>Contact: visionary@example.com</p>
-      <p>Portfolio: <a href="http://visionaryfilms.com" target="_blank">visionaryfilms.com</a></p>
-    </li>
-    <li>
-      <h2>Epic Moments</h2>
-      <p>Contact: epic@example.com</p>
-      <p>Portfolio: <a href="http://epicmoments.com" target="_blank">epicmoments.com</a></p>
-    </li>
-    <li>
-      <h2>Golden Hour Productions</h2>
-      <p>Contact: goldenhour@example.com</p>
-      <p>Portfolio: <a href="http://goldenhourproductions.com" target="_blank">goldenhourproductions.com</a></p>
-    </li>
-  </ul>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-videographer" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
 
-  <a href="index.html">
-    <svg class="icon">
-      <use href="/icons/events.svg#icon-host" />
-    </svg>
-    Back to Host
-  </a>
+  <main>
+    <h1>Available Videographers</h1>
+    
+    <div class="card-grid">
+      <div class="card">
+        <h2>Visionary Films</h2>
+        <p><strong>Contact:</strong> <a href="mailto:visionary@example.com">visionary@example.com</a></p>
+        <p><strong>Portfolio:</strong> <a href="http://visionaryfilms.com" target="_blank">visionaryfilms.com</a></p>
+      </div>
+      
+      <div class="card">
+        <h2>Epic Moments</h2>
+        <p><strong>Contact:</strong> <a href="mailto:epic@example.com">epic@example.com</a></p>
+        <p><strong>Portfolio:</strong> <a href="http://epicmoments.com" target="_blank">epicmoments.com</a></p>
+      </div>
+      
+      <div class="card">
+        <h2>Golden Hour Productions</h2>
+        <p><strong>Contact:</strong> <a href="mailto:goldenhour@example.com">goldenhour@example.com</a></p>
+        <p><strong>Portfolio:</strong> <a href="http://goldenhourproductions.com" target="_blank">goldenhourproductions.com</a></p>
+      </div>
+    </div>
+
+    <div class="back-to-host">
+      <a href="index.html">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-host" />
+        </svg>
+        Back to Host
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+    </div>
+  </footer>
 </body>
 </html>

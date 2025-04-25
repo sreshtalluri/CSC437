@@ -6,25 +6,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
   <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Event Details</title>
 </head>
 <body>
-  <h1>Event Details</h1>
-  
-  <div class="content-card">
-    <p><strong>Title:</strong> Annual Company Gala</p>
-    <p><strong>Date:</strong> December 15, 2024</p>
-    <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
-    <p><strong>Description:</strong> Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
-  </div>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-event" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
 
-  <a href="index.html">
-    <svg class="icon">
-      <use href="/icons/events.svg#icon-host" />
-    </svg>
-    Back to Host
-  </a>
+  <main>
+    <h1>Event Details</h1>
+    
+    <div class="card-grid">
+      <div class="card">
+        <h2>Event Information</h2>
+        <p><strong>Title:</strong> Annual Company Gala</p>
+        <p><strong>Date:</strong> December 15, 2024</p>
+        <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
+      </div>
+      
+      <div class="card">
+        <h2>Description</h2>
+        <p>Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
+      </div>
+    </div>
+
+    <div class="back-to-host">
+      <a href="index.html">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-host" />
+        </svg>
+        Back to Host
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+    </div>
+  </footer>
 </body>
 </html>

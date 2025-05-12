@@ -78,7 +78,17 @@
     <div>
       <p>&copy; 2023 Event Planner</p>
       <p>Contact: support@eventplanner.com</p>
+      <label id="darkmode-label" 
+        onchange="relayEvent(
+                  event,
+                  'dark-mode:toggle',
+                  {checked: event.target.checked})"
+      >
+        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+        Dark mode
+      </label>
     </div>
   </footer>
+  <script src="/scripts/darkmode.js"></script>
 </body>
 </html>

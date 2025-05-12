@@ -69,7 +69,7 @@ header a:hover {
 
 /* footer */
 footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-header);
   color: white;
   padding: 1rem;
 }

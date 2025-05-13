@@ -12,51 +12,59 @@
   <link rel="stylesheet" href="/styles/page.css">
   <script type="module">
     import { define } from "@calpoly/mustang";
-    import { VideographerElement } from "/src/elem-videographer.js";
+    import { VenueElement } from "/src/elem-venue.js";
 
     define({
-      "videographer-card": VideographerElement
+      "event-venue": VenueElement
     });
   </script>
-  <title>Videographers</title>
+  <title>Venues</title>
 </head>
 <body>
   <header>
     <div class="logo">
       <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
+        <use href="/icons/events.svg#icon-venue" />
       </svg>
       <span>Event Planner</span>
     </div>
   </header>
 
   <main>
-    <h1>Available Videographers</h1>
+    <h1>Available Venues</h1>
     
     <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
+      <event-venue
+        address="123 Main St, Cityville"
+        capacity="500 people"
+        contact="(123) 456-7890"
       >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        Grand Ballroom
+      </event-venue>
+      
+      <event-venue
+        address="456 Elm St, Townsville"
+        capacity="300 people"
+        contact="(987) 654-3210"
+      >
+        Sunset Gardens
+      </event-venue>
+      
+      <event-venue
+        address="789 Oak St, Metropolis"
+        capacity="200 people"
+        contact="(555) 123-4567"
+      >
+        Rooftop Terrace
+      </event-venue>
 
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
+      <event-venue
+        address="123 Side St, San Francisco"
+        capacity="450 people"
+        contact="(123) 456-7890"
       >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
-      >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        The Ritz Carlton
+      </event-venue>
     </div>
 
     <div class="back-to-host">
@@ -86,4 +94,4 @@
   </footer>
   <script src="/scripts/darkmode.js"></script>
 </body>
-</html>
+</html> 

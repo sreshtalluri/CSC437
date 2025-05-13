@@ -12,51 +12,51 @@
   <link rel="stylesheet" href="/styles/page.css">
   <script type="module">
     import { define } from "@calpoly/mustang";
-    import { VideographerElement } from "/src/elem-videographer.js";
+    import { PhotographerElement } from "/src/elem-photographer.js";
 
     define({
-      "videographer-card": VideographerElement
+      "photographer-card": PhotographerElement
     });
   </script>
-  <title>Videographers</title>
+  <title>Photographers</title>
 </head>
 <body>
   <header>
     <div class="logo">
       <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
+        <use href="/icons/events.svg#icon-photographer" />
       </svg>
       <span>Event Planner</span>
     </div>
   </header>
 
   <main>
-    <h1>Available Videographers</h1>
+    <h1>Available Photographers</h1>
     
     <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
+      <photographer-card
+        contact="john@example.com"
+        portfolio="http://johndoephotography.com"
       >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        <span slot="name">John Doe Photography</span>
+        <p>John Doe Photography specializes in capturing beautiful moments at events.</p>
+      </photographer-card>
 
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
+      <photographer-card
+        contact="jane@example.com"
+        portfolio="http://janesmithstudios.com"
       >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        <span slot="name">Jane Smith Studios</span>
+        <p>Jane Smith Studios offers professional photography services for all types of events.</p>
+      </photographer-card>
 
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
+      <photographer-card
+        contact="info@creativelens.com"
+        portfolio="http://creativelens.com"
       >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        <span slot="name">Creative Lens</span>
+        <p>Creative Lens brings a unique artistic perspective to event photography.</p>
+      </photographer-card>
     </div>
 
     <div class="back-to-host">

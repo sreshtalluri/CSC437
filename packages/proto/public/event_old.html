@@ -10,53 +10,33 @@
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
-  <script type="module">
-    import { define } from "@calpoly/mustang";
-    import { VideographerElement } from "/src/elem-videographer.js";
-
-    define({
-      "videographer-card": VideographerElement
-    });
-  </script>
-  <title>Videographers</title>
+  <title>Event Details</title>
 </head>
 <body>
   <header>
     <div class="logo">
       <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
+        <use href="/icons/events.svg#icon-event" />
       </svg>
       <span>Event Planner</span>
     </div>
   </header>
 
   <main>
-    <h1>Available Videographers</h1>
+    <h1>Event Details</h1>
     
     <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
-      >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
-      >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
-      >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+      <div class="card">
+        <h2>Event Information</h2>
+        <p><strong>Title:</strong> Annual Company Gala</p>
+        <p><strong>Date:</strong> December 15, 2024</p>
+        <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
+      </div>
+      
+      <div class="card">
+        <h2>Description</h2>
+        <p>Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
+      </div>
     </div>
 
     <div class="back-to-host">

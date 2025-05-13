@@ -10,53 +10,41 @@
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
+  <title>Guests</title>
   <script type="module">
     import { define } from "@calpoly/mustang";
-    import { VideographerElement } from "/src/elem-videographer.js";
+    import { GuestElement } from "/src/elem-guest.js";
 
     define({
-      "videographer-card": VideographerElement
+      "guest-element": GuestElement
     });
   </script>
-  <title>Videographers</title>
 </head>
 <body>
   <header>
     <div class="logo">
       <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
+        <use href="/icons/events.svg#icon-guests" />
       </svg>
       <span>Event Planner</span>
     </div>
   </header>
 
   <main>
-    <h1>Available Videographers</h1>
+    <h1>Guest List</h1>
     
     <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
-      >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
-      >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
-      >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+      <guest-element email="john.smith@example.com" rsvp="Confirmed">
+        <span slot="name">John Smith</span>
+      </guest-element>
+      
+      <guest-element email="sarah.j@example.com" rsvp="Pending">
+        <span slot="name">Sarah Johnson</span>
+      </guest-element>
+      
+      <guest-element email="michael.b@example.com" rsvp="Confirmed">
+        <span slot="name">Michael Brown</span>
+      </guest-element>
     </div>
 
     <div class="back-to-host">

@@ -12,51 +12,57 @@
   <link rel="stylesheet" href="/styles/page.css">
   <script type="module">
     import { define } from "@calpoly/mustang";
-    import { VideographerElement } from "/src/elem-videographer.js";
+    import { RestaurantElement } from "/src/elem-restaurant.js";
 
     define({
-      "videographer-card": VideographerElement
+      "restaurant-card": RestaurantElement
     });
   </script>
-  <title>Videographers</title>
+  <title>Restaurants</title>
 </head>
 <body>
   <header>
     <div class="logo">
       <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
+        <use href="/icons/events.svg#icon-restaurant" />
       </svg>
       <span>Event Planner</span>
     </div>
   </header>
 
   <main>
-    <h1>Available Videographers</h1>
+    <h1>Available Restaurants</h1>
     
     <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
+      <restaurant-card
+        address="123 Foodie Lane, Cityville"
+        contact="(123) 456-7890"
+        website="http://gourmetbistro.com"
+        cuisine="French"
       >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
+        <span slot="name">Gourmet Bistro</span>
+        <p>Gourmet Bistro is a restaurant that specializes in French cuisine.</p>
+      </restaurant-card>
+      
+      <restaurant-card
+        address="456 Curry Ave, Townsville"
+        contact="(987) 654-3210"
+        website="http://spicehaven.com"
+        cuisine="Indian"
       >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
+        <span slot="name">Spice Haven</span>
+        <p>Spice Haven is a restaurant that specializes in Indian cuisine.</p>
+      </restaurant-card>
+      
+      <restaurant-card
+        address="789 Cheesy St, Metropolis"
+        contact="(555) 123-4567"
+        website="http://pizzaparadise.com"
+        cuisine="Italian"
       >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+        <span slot="name">Pizza Paradise</span>
+        <p>Pizza Paradise is a restaurant that specializes in Italian cuisine.</p>
+      </restaurant-card>
     </div>
 
     <div class="back-to-host">

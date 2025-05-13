@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <title>Restaurants</title>
+  <script type="module" crossorigin src="/assets/restaurant-B7s-kRbF.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/card.css-C3XU9oUb.js">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-restaurant" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Available Restaurants</h1>
+    
+    <div class="card-grid">
+      <restaurant-card
+        address="123 Foodie Lane, Cityville"
+        contact="(123) 456-7890"
+        website="http://gourmetbistro.com"
+        cuisine="French"
+      >
+        <span slot="name">Gourmet Bistro</span>
+        <p>Gourmet Bistro is a restaurant that specializes in French cuisine.</p>
+      </restaurant-card>
+      
+      <restaurant-card
+        address="456 Curry Ave, Townsville"
+        contact="(987) 654-3210"
+        website="http://spicehaven.com"
+        cuisine="Indian"
+      >
+        <span slot="name">Spice Haven</span>
+        <p>Spice Haven is a restaurant that specializes in Indian cuisine.</p>
+      </restaurant-card>
+      
+      <restaurant-card
+        address="789 Cheesy St, Metropolis"
+        contact="(555) 123-4567"
+        website="http://pizzaparadise.com"
+        cuisine="Italian"
+      >
+        <span slot="name">Pizza Paradise</span>
+        <p>Pizza Paradise is a restaurant that specializes in Italian cuisine.</p>
+      </restaurant-card>
+    </div>
+
+    <div class="back-to-host">
+      <a href="index.html">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-host" />
+        </svg>
+        Back to Host
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+      <label id="darkmode-label" 
+        onchange="relayEvent(
+                  event,
+                  'dark-mode:toggle',
+                  {checked: event.target.checked})"
+      >
+        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+        Dark mode
+      </label>
+    </div>
+  </footer>
+  <script src="/scripts/darkmode.js"></script>
+</body>
+</html>

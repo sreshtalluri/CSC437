@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <title>Venues</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-venue" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Available Venues</h1>
+    
+    <div class="card-grid">
+      <div class="card">
+        <h2>Grand Ballroom</h2>
+        <p><strong>Address:</strong> 123 Main St, Cityville</p>
+        <p><strong>Capacity:</strong> 500 people</p>
+        <p><strong>Contact:</strong> (123) 456-7890</p>
+      </div>
+      
+      <div class="card">
+        <h2>Sunset Gardens</h2>
+        <p><strong>Address:</strong> 456 Elm St, Townsville</p>
+        <p><strong>Capacity:</strong> 300 people</p>
+        <p><strong>Contact:</strong> (987) 654-3210</p>
+      </div>
+      
+      <div class="card">
+        <h2>Rooftop Terrace</h2>
+        <p><strong>Address:</strong> 789 Oak St, Metropolis</p>
+        <p><strong>Capacity:</strong> 200 people</p>
+        <p><strong>Contact:</strong> (555) 123-4567</p>
+      </div>
+    </div>
+
+    <div class="back-to-host">
+      <a href="index.html">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-host" />
+        </svg>
+        Back to Host
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+      <label id="darkmode-label" 
+        onchange="relayEvent(
+                  event,
+                  'dark-mode:toggle',
+                  {checked: event.target.checked})"
+      >
+        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+        Dark mode
+      </label>
+    </div>
+  </footer>
+  <script src="/scripts/darkmode.js"></script>
+</body>
+</html>

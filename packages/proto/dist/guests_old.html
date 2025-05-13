@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <title>Guests</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-guests" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Guest List</h1>
+    
+    <div class="card-grid">
+      <div class="card">
+        <h2>John Smith</h2>
+        <p><strong>Email:</strong> <a href="mailto:john.smith@example.com">john.smith@example.com</a></p>
+        <p><strong>RSVP Status:</strong> Confirmed</p>
+      </div>
+      
+      <div class="card">
+        <h2>Sarah Johnson</h2>
+        <p><strong>Email:</strong> <a href="mailto:sarah.j@example.com">sarah.j@example.com</a></p>
+        <p><strong>RSVP Status:</strong> Pending</p>
+      </div>
+      
+      <div class="card">
+        <h2>Michael Brown</h2>
+        <p><strong>Email:</strong> <a href="mailto:michael.b@example.com">michael.b@example.com</a></p>
+        <p><strong>RSVP Status:</strong> Confirmed</p>
+      </div>
+    </div>
+
+    <div class="back-to-host">
+      <a href="index.html">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-host" />
+        </svg>
+        Back to Host
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+      <label id="darkmode-label" 
+        onchange="relayEvent(
+                  event,
+                  'dark-mode:toggle',
+                  {checked: event.target.checked})"
+      >
+        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+        Dark mode
+      </label>
+    </div>
+  </footer>
+  <script src="/scripts/darkmode.js"></script>
+</body>
+</html>

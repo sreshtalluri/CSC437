@@ -1,0 +1,97 @@
+/* global styles */
+body {
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* typography */
+h1 {
+  font-family: var(--font-family-display);
+  color: var(--color-primary);
+  font-size: var(--font-size-h1);
+  border-bottom: 2px solid var(--color-primary-light);
+  margin-bottom: var(--section-spacing);
+}
+
+h2 {
+  font-family: var(--font-family-display);
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 0;
+}
+
+h3 {
+  font-family: var(--font-family-display);
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+}
+
+p {
+  font-size: var(--font-size-large);
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+/* icons */
+.icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* header navigation */
+header a {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+header a:hover {
+  background-color: var(--color-background-card);
+}
+
+/* footer */
+footer {
+  background-color: var(--color-header);
+  color: white;
+  padding: 1rem;
+}
+
+footer p {
+  color: white;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* responsive typography */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

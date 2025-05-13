@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <link rel="stylesheet" href="/styles/navigation.css">
+  <title>Event Planner</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg class="icon">
+        <use href="/icons/events.svg#icon-event" />
+      </svg>
+      <span>Event Planner</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="card host-details">
+      <h1>Host Details</h1>
+      <div class="host-info">
+        <p>Name: [Host Name]</p>
+        <p>Contact: [Host Contact]</p>
+        <p>Role: [Host Role]</p>
+      </div>
+    </div>
+
+    <h2>Plan Your Event</h2>
+    <div class="navigation-grid">
+      <a href="event.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-event" />
+        </svg>
+        <span>View Event Details</span>
+      </a>
+      <a href="venue.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-venue" />
+        </svg>
+        <span>Choose a Venue</span>
+      </a>
+      <a href="restaurant.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-restaurant" />
+        </svg>
+        <span>Choose a Restaurant</span>
+      </a>
+      <a href="photographer.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-photographer" />
+        </svg>
+        <span>Hire a Photographer</span>
+      </a>
+      <a href="videographer.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-videographer" />
+        </svg>
+        <span>Hire a Videographer</span>
+      </a>
+      <a href="guests.html" class="nav-button">
+        <svg class="icon">
+          <use href="/icons/events.svg#icon-guests" />
+        </svg>
+        <span>Manage Guest List</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <p>&copy; 2023 Event Planner</p>
+      <p>Contact: support@eventplanner.com</p>
+      <label id="darkmode-label" 
+        onchange="relayEvent(
+                  event,
+                  'dark-mode:toggle',
+                  {checked: event.target.checked})"
+      >
+        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+        Dark mode
+      </label>
+    </div>
+  </footer>
+  <script src="/scripts/darkmode.js"></script>
+</body>
+</html>

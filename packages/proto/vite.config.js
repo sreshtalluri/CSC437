@@ -13,6 +13,7 @@ export default defineConfig({
         guests: resolve(__dirname, 'guests.html'),
         photographer: resolve(__dirname, 'photographer.html'),
         restaurant: resolve(__dirname, 'restaurant.html'),
+        venue: resolve(__dirname, 'venue.html'),
         videographer: resolve(__dirname, 'videographer.html')
       },
     },

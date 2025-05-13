@@ -29,7 +29,7 @@ export class VenueElement extends LitElement {
   override render() {
     return html`
       <div class="card">
-        <h2><slot></slot></h2>
+        <h2><slot name="name">Venue Name</slot></h2>
         <p><strong>Address:</strong> ${this.address}</p>
         <p><strong>Capacity:</strong> ${this.capacity}</p>
         <p><strong>Contact:</strong> ${this.contact}</p>

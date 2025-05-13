@@ -13,9 +13,11 @@
   <script type="module">
     import { define } from "@calpoly/mustang";
     import { RestaurantElement } from "/src/elem-restaurant.js";
+    import { ListElement } from "/src/elem-list.js";
 
     define({
-      "restaurant-card": RestaurantElement
+      "restaurant-card": RestaurantElement,
+      "list-view": ListElement
     });
   </script>
   <title>Restaurants</title>
@@ -32,38 +34,8 @@
 
   <main>
     <h1>Available Restaurants</h1>
-    
-    <div class="card-grid">
-      <restaurant-card
-        address="123 Foodie Lane, Cityville"
-        contact="(123) 456-7890"
-        website="http://gourmetbistro.com"
-        cuisine="French"
-      >
-        <span slot="name">Gourmet Bistro</span>
-        <p>Gourmet Bistro is a restaurant that specializes in French cuisine.</p>
-      </restaurant-card>
-      
-      <restaurant-card
-        address="456 Curry Ave, Townsville"
-        contact="(987) 654-3210"
-        website="http://spicehaven.com"
-        cuisine="Indian"
-      >
-        <span slot="name">Spice Haven</span>
-        <p>Spice Haven is a restaurant that specializes in Indian cuisine.</p>
-      </restaurant-card>
-      
-      <restaurant-card
-        address="789 Cheesy St, Metropolis"
-        contact="(555) 123-4567"
-        website="http://pizzaparadise.com"
-        cuisine="Italian"
-      >
-        <span slot="name">Pizza Paradise</span>
-        <p>Pizza Paradise is a restaurant that specializes in Italian cuisine.</p>
-      </restaurant-card>
-    </div>
+
+    <list-view src="/data/restaurants.json"></list-view>
 
     <div class="back-to-host">
       <a href="index.html">

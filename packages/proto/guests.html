@@ -14,9 +14,11 @@
   <script type="module">
     import { define } from "@calpoly/mustang";
     import { GuestElement } from "/src/elem-guest.js";
+    import { ListElement } from "/src/elem-list.js";
 
     define({
-      "guest-element": GuestElement
+      "guest-card": GuestElement,
+      "list-view": ListElement
     });
   </script>
 </head>
@@ -32,20 +34,8 @@
 
   <main>
     <h1>Guest List</h1>
-    
-    <div class="card-grid">
-      <guest-element email="john.smith@example.com" rsvp="Confirmed">
-        <span slot="name">John Smith</span>
-      </guest-element>
-      
-      <guest-element email="sarah.j@example.com" rsvp="Pending">
-        <span slot="name">Sarah Johnson</span>
-      </guest-element>
-      
-      <guest-element email="michael.b@example.com" rsvp="Confirmed">
-        <span slot="name">Michael Brown</span>
-      </guest-element>
-    </div>
+
+    <list-view src="/data/guests.json"></list-view>
 
     <div class="back-to-host">
       <a href="index.html">

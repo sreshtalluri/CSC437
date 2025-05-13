@@ -13,9 +13,11 @@
   <script type="module">
     import { define } from "@calpoly/mustang";
     import { PhotographerElement } from "/src/elem-photographer.js";
+    import { ListElement } from "/src/elem-list.js";
 
     define({
-      "photographer-card": PhotographerElement
+      "photographer-card": PhotographerElement,
+      "list-view": ListElement
     });
   </script>
   <title>Photographers</title>
@@ -32,32 +34,8 @@
 
   <main>
     <h1>Available Photographers</h1>
-    
-    <div class="card-grid">
-      <photographer-card
-        contact="john@example.com"
-        portfolio="http://johndoephotography.com"
-      >
-        <span slot="name">John Doe Photography</span>
-        <p>John Doe Photography specializes in capturing beautiful moments at events.</p>
-      </photographer-card>
 
-      <photographer-card
-        contact="jane@example.com"
-        portfolio="http://janesmithstudios.com"
-      >
-        <span slot="name">Jane Smith Studios</span>
-        <p>Jane Smith Studios offers professional photography services for all types of events.</p>
-      </photographer-card>
-
-      <photographer-card
-        contact="info@creativelens.com"
-        portfolio="http://creativelens.com"
-      >
-        <span slot="name">Creative Lens</span>
-        <p>Creative Lens brings a unique artistic perspective to event photography.</p>
-      </photographer-card>
-    </div>
+    <list-view src="/data/photographers.json"></list-view>
 
     <div class="back-to-host">
       <a href="index.html">

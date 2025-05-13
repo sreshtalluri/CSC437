@@ -13,9 +13,11 @@
   <script type="module">
     import { define } from "@calpoly/mustang";
     import { VenueElement } from "/src/elem-venue.js";
+    import { ListElement } from "/src/elem-list.js";
 
     define({
-      "event-venue": VenueElement
+      "venue-card": VenueElement,
+      "list-view": ListElement
     });
   </script>
   <title>Venues</title>
@@ -32,40 +34,8 @@
 
   <main>
     <h1>Available Venues</h1>
-    
-    <div class="card-grid">
-      <event-venue
-        address="123 Main St, Cityville"
-        capacity="500 people"
-        contact="(123) 456-7890"
-      >
-        Grand Ballroom
-      </event-venue>
-      
-      <event-venue
-        address="456 Elm St, Townsville"
-        capacity="300 people"
-        contact="(987) 654-3210"
-      >
-        Sunset Gardens
-      </event-venue>
-      
-      <event-venue
-        address="789 Oak St, Metropolis"
-        capacity="200 people"
-        contact="(555) 123-4567"
-      >
-        Rooftop Terrace
-      </event-venue>
 
-      <event-venue
-        address="123 Side St, San Francisco"
-        capacity="450 people"
-        contact="(123) 456-7890"
-      >
-        The Ritz Carlton
-      </event-venue>
-    </div>
+    <list-view src="/data/venues.json"></list-view>
 
     <div class="back-to-host">
       <a href="index.html">

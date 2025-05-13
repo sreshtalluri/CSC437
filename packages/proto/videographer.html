@@ -13,9 +13,11 @@
   <script type="module">
     import { define } from "@calpoly/mustang";
     import { VideographerElement } from "/src/elem-videographer.js";
+    import { ListElement } from "/src/elem-list.js";
 
     define({
-      "videographer-card": VideographerElement
+      "videographer-card": VideographerElement,
+      "list-view": ListElement
     });
   </script>
   <title>Videographers</title>
@@ -32,32 +34,8 @@
 
   <main>
     <h1>Available Videographers</h1>
-    
-    <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
-      >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
 
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
-      >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
-      >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-    </div>
+    <list-view src="/data/videographers.json"></list-view>
 
     <div class="back-to-host">
       <a href="index.html">

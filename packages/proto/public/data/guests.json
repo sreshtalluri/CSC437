@@ -1,0 +1,32 @@
+[
+  {
+    "type": "guest",
+    "name": "John Smith",
+    "email": "john.smith@email.com",
+    "rsvp": "Confirmed"
+  },
+  {
+    "type": "guest",
+    "name": "Jane Doe",
+    "email": "jane.doe@email.com",
+    "rsvp": "Pending"
+  },
+  {
+    "type": "guest",
+    "name": "Robert Johnson",
+    "email": "robert.johnson@email.com",
+    "rsvp": "Declined"
+  },
+  {
+    "type": "guest",
+    "name": "Maria Garcia",
+    "email": "maria.garcia@email.com",
+    "rsvp": "Confirmed"
+  },
+  {
+    "type": "guest",
+    "name": "David Lee",
+    "email": "david.lee@email.com",
+    "rsvp": "Pending"
+  }
+] 

@@ -1,0 +1,23 @@
+[
+  {
+    "type": "venue",
+    "name": "Grand Ballroom",
+    "address": "123 Main Street, Cityville",
+    "capacity": 500,
+    "contact": "(555) 123-4567"
+  },
+  {
+    "type": "venue",
+    "name": "Garden Pavilion",
+    "address": "456 Park Avenue, Townsville",
+    "capacity": 300,
+    "contact": "(555) 987-6543"
+  },
+  {
+    "type": "venue",
+    "name": "Skyline Terrace",
+    "address": "789 High Rise Blvd, Metropolis",
+    "capacity": 200,
+    "contact": "(555) 456-7890"
+  }
+] 

@@ -7,8 +7,11 @@ export class VideographerElement extends LitElement {
   @property({ type: String, attribute: "contact" })
   contact = "";
 
-  @property({ type: String, attribute: "portfolio" })
-  portfolio = "";
+  @property({ type: String, attribute: "website" })
+  website = "";
+
+  @property({ type: String, attribute: "specialty" })
+  specialty = "";
 
   static styles = [reset.styles, card.styles, css`
     :host {
@@ -41,8 +44,12 @@ export class VideographerElement extends LitElement {
           <a href="mailto:${this.contact}">${this.contact}</a>
         </p>
         <p>
-          <strong>Portfolio:</strong>
-          <a href="${this.portfolio}" target="_blank">${this.portfolio.replace(/^https?:\/\//, '')}</a>
+          <strong>Website:</strong>
+          <a href="${this.website}" target="_blank">${this.website.replace(/^https?:\/\//, '')}</a>
+        </p>
+        <p>
+          <strong>Specialty:</strong>
+          ${this.specialty}
         </p>
         <p><slot>Videographer description goes here.</slot></p>
       </div>

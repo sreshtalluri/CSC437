@@ -43,4 +43,19 @@ function get(id) {
     return photographer;
   });
 }
-var photographer_svc_default = { index, get };
+function create(json) {
+  const p = new PhotographerModel(json);
+  return p.save();
+}
+function update(id, photographer) {
+  return PhotographerModel.findOneAndUpdate({ id }, photographer, { new: true }).then((updated) => {
+    if (!updated) throw `Photographer with id ${id} not updated`;
+    else return updated;
+  });
+}
+function remove(id) {
+  return PhotographerModel.findOneAndDelete({ id }).then((deleted) => {
+    if (!deleted) throw `Photographer with id ${id} not deleted`;
+  });
+}
+var photographer_svc_default = { index, get, create, update, remove };

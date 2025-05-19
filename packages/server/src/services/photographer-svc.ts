@@ -27,4 +27,24 @@ function get(id: number): Promise<Photographer> {
     });
 }
 
-export default { index, get }; 
+function create(json: Photographer): Promise<Photographer> {
+  const p = new PhotographerModel(json);
+  return p.save();
+}
+
+function update(id: number, photographer: Photographer): Promise<Photographer> {
+  return PhotographerModel.findOneAndUpdate({ id }, photographer, { new: true })
+    .then((updated) => {
+      if (!updated) throw `Photographer with id ${id} not updated`;
+      else return updated as Photographer;
+    });
+}
+
+function remove(id: number): Promise<void> {
+  return PhotographerModel.findOneAndDelete({ id })
+    .then((deleted) => {
+      if (!deleted) throw `Photographer with id ${id} not deleted`;
+    });
+}
+
+export default { index, get, create, update, remove }; 

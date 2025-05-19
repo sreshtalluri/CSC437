@@ -29,4 +29,24 @@ function get(id: number): Promise<Restaurant> {
     });
 }
 
-export default { index, get }; 
+function create(json: Restaurant): Promise<Restaurant> {
+  const r = new RestaurantModel(json);
+  return r.save();
+}
+
+function update(id: number, restaurant: Restaurant): Promise<Restaurant> {
+  return RestaurantModel.findOneAndUpdate({ id }, restaurant, { new: true })
+    .then((updated) => {
+      if (!updated) throw `Restaurant with id ${id} not updated`;
+      else return updated as Restaurant;
+    });
+}
+
+function remove(id: number): Promise<void> {
+  return RestaurantModel.findOneAndDelete({ id })
+    .then((deleted) => {
+      if (!deleted) throw `Restaurant with id ${id} not deleted`;
+    });
+}
+
+export default { index, get, create, update, remove }; 

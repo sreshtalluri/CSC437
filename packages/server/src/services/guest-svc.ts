@@ -26,4 +26,24 @@ function get(id: number): Promise<Guest> {
     });
 }
 
-export default { index, get }; 
+function create(json: Guest): Promise<Guest> {
+  const g = new GuestModel(json);
+  return g.save();
+}
+
+function update(id: number, guest: Guest): Promise<Guest> {
+  return GuestModel.findOneAndUpdate({ id }, guest, { new: true })
+    .then((updated) => {
+      if (!updated) throw `Guest with id ${id} not updated`;
+      else return updated as Guest;
+    });
+}
+
+function remove(id: number): Promise<void> {
+  return GuestModel.findOneAndDelete({ id })
+    .then((deleted) => {
+      if (!deleted) throw `Guest with id ${id} not deleted`;
+    });
+}
+
+export default { index, get, create, update, remove }; 

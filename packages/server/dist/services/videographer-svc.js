@@ -43,4 +43,19 @@ function get(id) {
     return videographer;
   });
 }
-var videographer_svc_default = { index, get };
+function create(json) {
+  const v = new VideographerModel(json);
+  return v.save();
+}
+function update(id, videographer) {
+  return VideographerModel.findOneAndUpdate({ id }, videographer, { new: true }).then((updated) => {
+    if (!updated) throw `Videographer with id ${id} not updated`;
+    else return updated;
+  });
+}
+function remove(id) {
+  return VideographerModel.findOneAndDelete({ id }).then((deleted) => {
+    if (!deleted) throw `Videographer with id ${id} not deleted`;
+  });
+}
+var videographer_svc_default = { index, get, create, update, remove };

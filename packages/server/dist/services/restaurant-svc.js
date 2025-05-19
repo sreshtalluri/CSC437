@@ -45,4 +45,19 @@ function get(id) {
     return restaurant;
   });
 }
-var restaurant_svc_default = { index, get };
+function create(json) {
+  const r = new RestaurantModel(json);
+  return r.save();
+}
+function update(id, restaurant) {
+  return RestaurantModel.findOneAndUpdate({ id }, restaurant, { new: true }).then((updated) => {
+    if (!updated) throw `Restaurant with id ${id} not updated`;
+    else return updated;
+  });
+}
+function remove(id) {
+  return RestaurantModel.findOneAndDelete({ id }).then((deleted) => {
+    if (!deleted) throw `Restaurant with id ${id} not deleted`;
+  });
+}
+var restaurant_svc_default = { index, get, create, update, remove };

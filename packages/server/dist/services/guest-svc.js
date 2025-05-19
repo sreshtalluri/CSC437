@@ -42,4 +42,19 @@ function get(id) {
     return guest;
   });
 }
-var guest_svc_default = { index, get };
+function create(json) {
+  const g = new GuestModel(json);
+  return g.save();
+}
+function update(id, guest) {
+  return GuestModel.findOneAndUpdate({ id }, guest, { new: true }).then((updated) => {
+    if (!updated) throw `Guest with id ${id} not updated`;
+    else return updated;
+  });
+}
+function remove(id) {
+  return GuestModel.findOneAndDelete({ id }).then((deleted) => {
+    if (!deleted) throw `Guest with id ${id} not deleted`;
+  });
+}
+var guest_svc_default = { index, get, create, update, remove };

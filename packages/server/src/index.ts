@@ -1,5 +1,10 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
+import venues from "./routes/venues";
+import photographers from "./routes/photographers";
+import videographers from "./routes/videographers";
+import guests from "./routes/guests";
+import restaurants from "./routes/restaurants";
 import Venues from "./services/venue-svc";
 import Photographers from "./services/photographer-svc";
 import Videographers from "./services/videographer-svc";
@@ -13,10 +18,12 @@ const staticDir = process.env.STATIC || "public";
 connect("eventplan");
 
 app.use(express.static(staticDir));
-
-app.get("/hello", (req: Request, res: Response) => {
-    res.send("<a href='https://www.google.com'>Hello, World!!!</a>");
-});
+app.use(express.json());
+app.use("/api/venues", venues);
+app.use("/api/photographers", photographers);
+app.use("/api/videographers", videographers);
+app.use("/api/guests", guests);
+app.use("/api/restaurants", restaurants);
 
 // Venue routes
 app.get("/venues", (req: Request, res: Response) => {

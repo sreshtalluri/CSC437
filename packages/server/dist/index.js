@@ -23,6 +23,11 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
+var import_venues = __toESM(require("./routes/venues"));
+var import_photographers = __toESM(require("./routes/photographers"));
+var import_videographers = __toESM(require("./routes/videographers"));
+var import_guests = __toESM(require("./routes/guests"));
+var import_restaurants = __toESM(require("./routes/restaurants"));
 var import_venue_svc = __toESM(require("./services/venue-svc"));
 var import_photographer_svc = __toESM(require("./services/photographer-svc"));
 var import_videographer_svc = __toESM(require("./services/videographer-svc"));
@@ -33,12 +38,15 @@ const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 (0, import_mongo.connect)("eventplan");
 app.use(import_express.default.static(staticDir));
-app.get("/hello", (req, res) => {
-  res.send("<a href='https://www.google.com'>Hello, World!!!</a>");
-});
+app.use(import_express.default.json());
+app.use("/api/venues", import_venues.default);
+app.use("/api/photographers", import_photographers.default);
+app.use("/api/videographers", import_videographers.default);
+app.use("/api/guests", import_guests.default);
+app.use("/api/restaurants", import_restaurants.default);
 app.get("/venues", (req, res) => {
-  import_venue_svc.default.index().then((venues) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(venues));
+  import_venue_svc.default.index().then((venues2) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(venues2));
   }).catch((err) => {
     res.status(500).send(err);
   });
@@ -56,8 +64,8 @@ app.get("/venues/:id", (req, res) => {
   });
 });
 app.get("/photographers", (req, res) => {
-  import_photographer_svc.default.index().then((photographers) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(photographers));
+  import_photographer_svc.default.index().then((photographers2) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(photographers2));
   }).catch((err) => {
     res.status(500).send(err);
   });
@@ -75,8 +83,8 @@ app.get("/photographers/:id", (req, res) => {
   });
 });
 app.get("/videographers", (req, res) => {
-  import_videographer_svc.default.index().then((videographers) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(videographers));
+  import_videographer_svc.default.index().then((videographers2) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(videographers2));
   }).catch((err) => {
     res.status(500).send(err);
   });
@@ -94,8 +102,8 @@ app.get("/videographers/:id", (req, res) => {
   });
 });
 app.get("/guests", (req, res) => {
-  import_guest_svc.default.index().then((guests) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(guests));
+  import_guest_svc.default.index().then((guests2) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(guests2));
   }).catch((err) => {
     res.status(500).send(err);
   });
@@ -113,8 +121,8 @@ app.get("/guests/:id", (req, res) => {
   });
 });
 app.get("/restaurants", (req, res) => {
-  import_restaurant_svc.default.index().then((restaurants) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(restaurants));
+  import_restaurant_svc.default.index().then((restaurants2) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(restaurants2));
   }).catch((err) => {
     res.status(500).send(err);
   });

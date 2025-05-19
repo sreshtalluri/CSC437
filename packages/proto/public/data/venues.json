@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "type": "venue",
     "name": "Grand Ballroom",
     "address": "123 Main Street, Cityville",
@@ -7,6 +8,7 @@
     "contact": "(555) 123-4567"
   },
   {
+    "id": 2,
     "type": "venue",
     "name": "Garden Pavilion",
     "address": "456 Park Avenue, Townsville",
@@ -14,6 +16,7 @@
     "contact": "(555) 987-6543"
   },
   {
+    "id": 3,
     "type": "venue",
     "name": "Skyline Terrace",
     "address": "789 High Rise Blvd, Metropolis",

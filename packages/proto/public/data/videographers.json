@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "type": "videographer",
     "name": "David Wilson",
     "contact": "(555) 123-4567",
@@ -7,6 +8,7 @@
     "specialty": "Wedding Videography"
   },
   {
+    "id": 2,
     "type": "videographer",
     "name": "Lisa Thompson",
     "contact": "(555) 987-6543",
@@ -14,6 +16,7 @@
     "specialty": "Event Videography"
   },
   {
+    "id": 3,
     "type": "videographer",
     "name": "James Martinez",
     "contact": "(555) 456-7890",

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "type": "restaurant",
     "name": "Gourmet Bistro",
     "address": "123 Foodie Lane, Cityville",
@@ -9,6 +10,7 @@
     "description": "Gourmet Bistro is a restaurant that specializes in French cuisine."
   },
   {
+    "id": 2,
     "type": "restaurant",
     "name": "Spice Haven",
     "address": "456 Curry Ave, Townsville",
@@ -18,6 +20,7 @@
     "description": "Spice Haven is a restaurant that specializes in Indian cuisine."
   },
   {
+    "id": 3,
     "type": "restaurant",
     "name": "Pizza Paradise",
     "address": "789 Cheesy St, Metropolis",

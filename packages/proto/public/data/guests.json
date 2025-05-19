@@ -1,29 +1,34 @@
 [
   {
+    "id": 1,
     "type": "guest",
     "name": "John Smith",
     "email": "john.smith@email.com",
     "rsvp": "Confirmed"
   },
   {
+    "id": 2,
     "type": "guest",
     "name": "Jane Doe",
     "email": "jane.doe@email.com",
     "rsvp": "Pending"
   },
   {
+    "id": 3,
     "type": "guest",
     "name": "Robert Johnson",
     "email": "robert.johnson@email.com",
     "rsvp": "Declined"
   },
   {
+    "id": 4,
     "type": "guest",
     "name": "Maria Garcia",
     "email": "maria.garcia@email.com",
     "rsvp": "Confirmed"
   },
   {
+    "id": 5,
     "type": "guest",
     "name": "David Lee",
     "email": "david.lee@email.com",

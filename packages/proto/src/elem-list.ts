@@ -1,5 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import { Auth, Observer } from "@calpoly/mustang";
 import reset from "./styles/reset.css.ts";
 import card from "./styles/card.css.ts";
 
@@ -55,6 +56,16 @@ export class ListElement extends LitElement {
   @state()
   items: Array<Item> = [];
 
+  _authObserver = new Observer<Auth.Model>(this, "eplan:auth");
+  _user?: Auth.User;
+
+  get authorization() {
+    if (!this._user?.authenticated) return undefined;
+    return {
+      Authorization: `Bearer ${this._user.username}`
+    };
+  }
+
   static styles = [reset.styles, card.styles, css`
     :host {
       display: block;
@@ -71,11 +82,15 @@ export class ListElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this._authObserver.observe((auth: Auth.Model) => {
+      this._user = auth.user;
+    });
     if (this.src) this.hydrate(this.src);
   }
 
   hydrate(src: string) {
-    fetch(src)
+    const headers = this.authorization ? { headers: this.authorization } : undefined;
+    fetch(src, headers)
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

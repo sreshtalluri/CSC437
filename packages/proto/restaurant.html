@@ -11,57 +11,57 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <script type="module">
-    import { define } from "@calpoly/mustang";
+    import { define, Auth } from "@calpoly/mustang";
     import { RestaurantElement } from "/src/elem-restaurant.js";
     import { ListElement } from "/src/elem-list.js";
+    import { HeaderElement } from "/src/header.js";
 
     define({
+      "mu-auth": Auth.Provider,
       "restaurant-card": RestaurantElement,
-      "list-view": ListElement
+      "list-view": ListElement,
+      "event-header": HeaderElement
     });
+
+    HeaderElement.initializeOnce();
   </script>
   <title>Restaurants</title>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <svg class="icon">
-        <use href="/icons/events.svg#icon-restaurant" />
-      </svg>
-      <span>Event Planner</span>
-    </div>
-  </header>
+  <mu-auth provides="eplan:auth">
+    <event-header icon="icon-restaurant"></event-header>
 
-  <main>
-    <h1>Available Restaurants</h1>
+    <main>
+      <h1>Available Restaurants</h1>
 
-    <list-view src="/data/restaurants.json"></list-view>
+      <list-view src="/data/restaurants.json"></list-view>
 
-    <div class="back-to-host">
-      <a href="index.html">
-        <svg class="icon">
-          <use href="/icons/events.svg#icon-host" />
-        </svg>
-        Back to Host
-      </a>
-    </div>
-  </main>
+      <div class="back-to-host">
+        <a href="index.html">
+          <svg class="icon">
+            <use href="/icons/events.svg#icon-host" />
+          </svg>
+          Back to Host
+        </a>
+      </div>
+    </main>
 
-  <footer>
-    <div>
-      <p>&copy; 2023 Event Planner</p>
-      <p>Contact: support@eventplanner.com</p>
-      <label id="darkmode-label" 
-        onchange="relayEvent(
-                  event,
-                  'dark-mode:toggle',
-                  {checked: event.target.checked})"
-      >
-        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
-        Dark mode
-      </label>
-    </div>
-  </footer>
-  <script src="/scripts/darkmode.js"></script>
+    <footer>
+      <div>
+        <p>&copy; 2023 Event Planner</p>
+        <p>Contact: support@eventplanner.com</p>
+        <label id="darkmode-label" 
+          onchange="relayEvent(
+                    event,
+                    'dark-mode:toggle',
+                    {checked: event.target.checked})"
+        >
+          <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+          Dark mode
+        </label>
+      </div>
+    </footer>
+    <script src="/scripts/darkmode.js"></script>
+  </mu-auth>
 </body>
 </html>

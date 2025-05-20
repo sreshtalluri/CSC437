@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "type": "photographer",
+    "name": "Sarah Johnson",
+    "contact": "(555) 123-4567",
+    "website": "https://sarahjohnson.photo",
+    "specialty": "Wedding Photography"
+  },
+  {
+    "id": 2,
+    "type": "photographer",
+    "name": "Michael Chen",
+    "contact": "(555) 987-6543",
+    "website": "https://michaelchen.photo",
+    "specialty": "Event Photography"
+  },
+  {
+    "id": 3,
+    "type": "photographer",
+    "name": "Emily Rodriguez",
+    "contact": "(555) 456-7890",
+    "website": "https://emilyrodriguez.photo",
+    "specialty": "Portrait Photography"
+  }
+] 

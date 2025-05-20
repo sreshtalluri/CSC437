@@ -11,73 +11,46 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Videographers</title>
-  <script type="module" crossorigin src="/assets/videographer-q_dtXJBh.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/card.css-C3XU9oUb.js">
+  <script type="module" crossorigin src="/assets/videographer-GKLxpsGH.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
+  <link rel="modulepreload" crossorigin href="/assets/elem-list-bm3u-S8t.js">
+  <link rel="modulepreload" crossorigin href="/assets/header-m5_XIgl8.js">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <svg class="icon">
-        <use href="/icons/events.svg#icon-videographer" />
-      </svg>
-      <span>Event Planner</span>
-    </div>
-  </header>
+  <mu-auth provides="eplan:auth">
+    <event-header icon="icon-videographer"></event-header>
 
-  <main>
-    <h1>Available Videographers</h1>
-    
-    <div class="card-grid">
-      <videographer-card
-        contact="visionary@example.com"
-        portfolio="http://visionaryfilms.com"
-      >
-        <span slot="name">Visionary Films</span>
-        <p>Visionary Films is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+    <main>
+      <h1>Available Videographers</h1>
 
-      <videographer-card
-        contact="epic@example.com"
-        portfolio="http://epicmoments.com"
-      >
-        <span slot="name">Epic Moments</span>
-        <p>Epic Moments is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
+      <list-view src="/data/videographers.json"></list-view>
 
-      <videographer-card
-        contact="goldenhour@example.com"
-        portfolio="http://goldenhourproductions.com"
-      >
-        <span slot="name">Golden Hour Productions</span>
-        <p>Golden Hour Productions is a videography company that specializes in creating beautiful and engaging videos for events.</p>
-      </videographer-card>
-    </div>
+      <div class="back-to-host">
+        <a href="index.html">
+          <svg class="icon">
+            <use href="/icons/events.svg#icon-host" />
+          </svg>
+          Back to Host
+        </a>
+      </div>
+    </main>
 
-    <div class="back-to-host">
-      <a href="index.html">
-        <svg class="icon">
-          <use href="/icons/events.svg#icon-host" />
-        </svg>
-        Back to Host
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <div>
-      <p>&copy; 2023 Event Planner</p>
-      <p>Contact: support@eventplanner.com</p>
-      <label id="darkmode-label" 
-        onchange="relayEvent(
-                  event,
-                  'dark-mode:toggle',
-                  {checked: event.target.checked})"
-      >
-        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
-        Dark mode
-      </label>
-    </div>
-  </footer>
-  <script src="/scripts/darkmode.js"></script>
+    <footer>
+      <div>
+        <p>&copy; 2023 Event Planner</p>
+        <p>Contact: support@eventplanner.com</p>
+        <label id="darkmode-label" 
+          onchange="relayEvent(
+                    event,
+                    'dark-mode:toggle',
+                    {checked: event.target.checked})"
+        >
+          <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+          Dark mode
+        </label>
+      </div>
+    </footer>
+    <script src="/scripts/darkmode.js"></script>
+  </mu-auth>
 </body>
 </html>

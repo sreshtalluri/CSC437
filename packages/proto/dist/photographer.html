@@ -11,73 +11,46 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Photographers</title>
-  <script type="module" crossorigin src="/assets/photographer-AhB35pEa.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/card.css-C3XU9oUb.js">
+  <script type="module" crossorigin src="/assets/photographer-DPgj5pa0.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
+  <link rel="modulepreload" crossorigin href="/assets/elem-list-bm3u-S8t.js">
+  <link rel="modulepreload" crossorigin href="/assets/header-m5_XIgl8.js">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <svg class="icon">
-        <use href="/icons/events.svg#icon-photographer" />
-      </svg>
-      <span>Event Planner</span>
-    </div>
-  </header>
+  <mu-auth provides="eplan:auth">
+    <event-header icon="icon-photographer"></event-header>
 
-  <main>
-    <h1>Available Photographers</h1>
-    
-    <div class="card-grid">
-      <photographer-card
-        contact="john@example.com"
-        portfolio="http://johndoephotography.com"
-      >
-        <span slot="name">John Doe Photography</span>
-        <p>John Doe Photography specializes in capturing beautiful moments at events.</p>
-      </photographer-card>
+    <main>
+      <h1>Available Photographers</h1>
 
-      <photographer-card
-        contact="jane@example.com"
-        portfolio="http://janesmithstudios.com"
-      >
-        <span slot="name">Jane Smith Studios</span>
-        <p>Jane Smith Studios offers professional photography services for all types of events.</p>
-      </photographer-card>
+      <list-view src="/data/photographers.json"></list-view>
 
-      <photographer-card
-        contact="info@creativelens.com"
-        portfolio="http://creativelens.com"
-      >
-        <span slot="name">Creative Lens</span>
-        <p>Creative Lens brings a unique artistic perspective to event photography.</p>
-      </photographer-card>
-    </div>
+      <div class="back-to-host">
+        <a href="index.html">
+          <svg class="icon">
+            <use href="/icons/events.svg#icon-host" />
+          </svg>
+          Back to Host
+        </a>
+      </div>
+    </main>
 
-    <div class="back-to-host">
-      <a href="index.html">
-        <svg class="icon">
-          <use href="/icons/events.svg#icon-host" />
-        </svg>
-        Back to Host
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <div>
-      <p>&copy; 2023 Event Planner</p>
-      <p>Contact: support@eventplanner.com</p>
-      <label id="darkmode-label" 
-        onchange="relayEvent(
-                  event,
-                  'dark-mode:toggle',
-                  {checked: event.target.checked})"
-      >
-        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
-        Dark mode
-      </label>
-    </div>
-  </footer>
-  <script src="/scripts/darkmode.js"></script>
+    <footer>
+      <div>
+        <p>&copy; 2023 Event Planner</p>
+        <p>Contact: support@eventplanner.com</p>
+        <label id="darkmode-label" 
+          onchange="relayEvent(
+                    event,
+                    'dark-mode:toggle',
+                    {checked: event.target.checked})"
+        >
+          <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+          Dark mode
+        </label>
+      </div>
+    </footer>
+    <script src="/scripts/darkmode.js"></script>
+  </mu-auth>
 </body>
 </html>

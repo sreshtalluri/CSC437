@@ -9,6 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        login: resolve(__dirname, 'login.html'),
+        newuser: resolve(__dirname, 'newuser.html'),
         event: resolve(__dirname, 'event.html'),
         guests: resolve(__dirname, 'guests.html'),
         photographer: resolve(__dirname, 'photographer.html'),

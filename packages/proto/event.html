@@ -11,59 +11,65 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Event Details</title>
+  <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    import { HeaderElement } from "/src/header.js";
+
+    define({
+      "mu-auth": Auth.Provider,
+      "event-header": HeaderElement
+    });
+
+    HeaderElement.initializeOnce();
+  </script>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <svg class="icon">
-        <use href="/icons/events.svg#icon-event" />
-      </svg>
-      <span>Event Planner</span>
-    </div>
-  </header>
+  <mu-auth provides="eplan:auth">
+    <event-header icon="icon-event"></event-header>
 
-  <main>
-    <h1>Event Details</h1>
-    
-    <div class="card-grid">
-      <div class="card">
-        <h2>Event Information</h2>
-        <p><strong>Title:</strong> Annual Company Gala</p>
-        <p><strong>Date:</strong> December 15, 2024</p>
-        <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
-      </div>
+    <main>
+      <h1>Event Details</h1>
       
-      <div class="card">
-        <h2>Description</h2>
-        <p>Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
+      <div class="card-grid">
+        <div class="card">
+          <h2>Event Information</h2>
+          <p><strong>Title:</strong> Annual Company Gala</p>
+          <p><strong>Date:</strong> December 15, 2024</p>
+          <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
+        </div>
+        
+        <div class="card">
+          <h2>Description</h2>
+          <p>Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="back-to-host">
-      <a href="index.html">
-        <svg class="icon">
-          <use href="/icons/events.svg#icon-host" />
-        </svg>
-        Back to Host
-      </a>
-    </div>
-  </main>
+      <div class="back-to-host">
+        <a href="index.html">
+          <svg class="icon">
+            <use href="/icons/events.svg#icon-host" />
+          </svg>
+          Back to Host
+        </a>
+      </div>
+    </main>
 
-  <footer>
-    <div>
-      <p>&copy; 2023 Event Planner</p>
-      <p>Contact: support@eventplanner.com</p>
-      <label id="darkmode-label" 
-        onchange="relayEvent(
-                  event,
-                  'dark-mode:toggle',
-                  {checked: event.target.checked})"
-      >
-        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
-        Dark mode
-      </label>
-    </div>
-  </footer>
-  <script src="/scripts/darkmode.js"></script>
+    <footer>
+      <div>
+        <p>&copy; 2023 Event Planner</p>
+        <p>Contact: support@eventplanner.com</p>
+        <label id="darkmode-label" 
+          onchange="relayEvent(
+                    event,
+                    'dark-mode:toggle',
+                    {checked: event.target.checked})"
+        >
+          <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+          Dark mode
+        </label>
+      </div>
+    </footer>
+    <script src="/scripts/darkmode.js"></script>
+  </mu-auth>
 </body>
 </html>

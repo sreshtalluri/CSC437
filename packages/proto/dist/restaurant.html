@@ -11,79 +11,46 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Restaurants</title>
-  <script type="module" crossorigin src="/assets/restaurant-B7s-kRbF.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/card.css-C3XU9oUb.js">
+  <script type="module" crossorigin src="/assets/restaurant-CMapM_Jy.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
+  <link rel="modulepreload" crossorigin href="/assets/elem-list-bm3u-S8t.js">
+  <link rel="modulepreload" crossorigin href="/assets/header-m5_XIgl8.js">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <svg class="icon">
-        <use href="/icons/events.svg#icon-restaurant" />
-      </svg>
-      <span>Event Planner</span>
-    </div>
-  </header>
+  <mu-auth provides="eplan:auth">
+    <event-header icon="icon-restaurant"></event-header>
 
-  <main>
-    <h1>Available Restaurants</h1>
-    
-    <div class="card-grid">
-      <restaurant-card
-        address="123 Foodie Lane, Cityville"
-        contact="(123) 456-7890"
-        website="http://gourmetbistro.com"
-        cuisine="French"
-      >
-        <span slot="name">Gourmet Bistro</span>
-        <p>Gourmet Bistro is a restaurant that specializes in French cuisine.</p>
-      </restaurant-card>
-      
-      <restaurant-card
-        address="456 Curry Ave, Townsville"
-        contact="(987) 654-3210"
-        website="http://spicehaven.com"
-        cuisine="Indian"
-      >
-        <span slot="name">Spice Haven</span>
-        <p>Spice Haven is a restaurant that specializes in Indian cuisine.</p>
-      </restaurant-card>
-      
-      <restaurant-card
-        address="789 Cheesy St, Metropolis"
-        contact="(555) 123-4567"
-        website="http://pizzaparadise.com"
-        cuisine="Italian"
-      >
-        <span slot="name">Pizza Paradise</span>
-        <p>Pizza Paradise is a restaurant that specializes in Italian cuisine.</p>
-      </restaurant-card>
-    </div>
+    <main>
+      <h1>Available Restaurants</h1>
 
-    <div class="back-to-host">
-      <a href="index.html">
-        <svg class="icon">
-          <use href="/icons/events.svg#icon-host" />
-        </svg>
-        Back to Host
-      </a>
-    </div>
-  </main>
+      <list-view src="/data/restaurants.json"></list-view>
 
-  <footer>
-    <div>
-      <p>&copy; 2023 Event Planner</p>
-      <p>Contact: support@eventplanner.com</p>
-      <label id="darkmode-label" 
-        onchange="relayEvent(
-                  event,
-                  'dark-mode:toggle',
-                  {checked: event.target.checked})"
-      >
-        <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
-        Dark mode
-      </label>
-    </div>
-  </footer>
-  <script src="/scripts/darkmode.js"></script>
+      <div class="back-to-host">
+        <a href="index.html">
+          <svg class="icon">
+            <use href="/icons/events.svg#icon-host" />
+          </svg>
+          Back to Host
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <p>&copy; 2023 Event Planner</p>
+        <p>Contact: support@eventplanner.com</p>
+        <label id="darkmode-label" 
+          onchange="relayEvent(
+                    event,
+                    'dark-mode:toggle',
+                    {checked: event.target.checked})"
+        >
+          <input type="checkbox" id="darkmode-toggle" autocomplete="off" />
+          Dark mode
+        </label>
+      </div>
+    </footer>
+    <script src="/scripts/darkmode.js"></script>
+  </mu-auth>
 </body>
 </html>

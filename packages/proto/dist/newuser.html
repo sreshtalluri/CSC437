@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <link rel="stylesheet" href="/styles/auth.css">
+  <script type="module" crossorigin src="/assets/newuser-BmNb3Mfs.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
+  <link rel="modulepreload" crossorigin href="/assets/login-form-DR6m-RA_.js">
+</head>
+<body class="page">
+  <mu-auth>
+    <div class="auth-container">
+      <h2>Create Account</h2>
+      <login-form api="/auth/register">
+        <label>
+          <span>Username</span>
+          <input name="username" autocomplete="off" placeholder="Choose a username" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="Create a password" required />
+        </label>
+        <label>
+          <span>Confirm Password</span>
+          <input type="password" name="confirmPassword" placeholder="Confirm your password" required />
+        </label>
+      </login-form>
+      <div class="auth-links">
+        <p>Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+    </div>
+  </mu-auth>
+</body>
+</html> 

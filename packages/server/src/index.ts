@@ -13,6 +13,7 @@ const staticDir = process.env.STATIC || "public";
 
 connect("eventplan");
 
+console.log("Serving static files from ", staticDir);
 app.use(express.static(staticDir));
 app.use(express.json());
 app.use("/api/venues", authenticateUser, venues);

@@ -33,6 +33,7 @@ const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 (0, import_mongo.connect)("eventplan");
+console.log("Serving static files from ", staticDir);
 app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
 app.use("/api/venues", import_auth.authenticateUser, import_venues.default);

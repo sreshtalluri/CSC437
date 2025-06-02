@@ -6,6 +6,7 @@ import card from "./styles/card.css.ts";
 
 // interfaces for each type of data
 interface Venue {
+  id: number;
   type: 'venue';
   name: string;
   address: string;
@@ -14,6 +15,7 @@ interface Venue {
 }
 
 interface Photographer {
+  id: number;
   type: 'photographer';
   name: string;
   contact: string;
@@ -22,6 +24,7 @@ interface Photographer {
 }
 
 interface Videographer {
+  id: number;
   type: 'videographer';
   name: string;
   contact: string;
@@ -30,6 +33,7 @@ interface Videographer {
 }
 
 interface Guest {
+  id: number;
   type: 'guest';
   name: string;
   email: string;
@@ -37,6 +41,7 @@ interface Guest {
 }
 
 interface Restaurant {
+  id: number;
   type: 'restaurant';
   name: string;
   address: string;
@@ -56,14 +61,26 @@ export class ListElement extends LitElement {
   @state()
   items: Array<Item> = [];
 
+  @state()
+  loading = true;
+
+  @state()
+  error?: string;
+
   _authObserver = new Observer<Auth.Model>(this, "eplan:auth");
   _user?: Auth.User;
 
   get authorization() {
-    if (!this._user?.authenticated) return undefined;
-    return {
-      Authorization: `Bearer ${this._user.username}`
+    if (!this._user?.authenticated) {
+      console.log('User not authenticated');
+      return undefined;
+    }
+    
+    const auth = {
+      Authorization: `Bearer ${(this._user as any).token}`
     };
+    
+    return auth;
   }
 
   static styles = [reset.styles, card.styles, css`
@@ -78,33 +95,69 @@ export class ListElement extends LitElement {
       align-items: stretch;
       width: 100%;
     }
+
+    .error {
+      color: var(--color-error);
+      padding: 1rem;
+      background-color: var(--color-error-light);
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-text-light);
+    }
   `];
 
   connectedCallback() {
     super.connectedCallback();
     this._authObserver.observe((auth: Auth.Model) => {
+      console.log('Auth state changed:', auth);
       this._user = auth.user;
+      if (this.src) this.hydrate(this.src);
     });
-    if (this.src) this.hydrate(this.src);
   }
 
   hydrate(src: string) {
+    this.loading = true;
+    this.error = undefined;
+
+    console.log('Fetching from:', src);
+    console.log('Auth state:', this._user?.authenticated ? 'Authenticated' : 'Not authenticated');
+    console.log('User:', this._user);
+
     const headers = this.authorization ? { headers: this.authorization } : undefined;
+    console.log('Request headers:', headers);
+
     fetch(src, headers)
       .then(res => {
+        console.log('Response status:', res.status);
+        console.log('Response headers:', Object.fromEntries(res.headers.entries()));
+        
         if (!res.ok) {
+          if (res.status === 401) {
+            throw new Error('Authentication required. Please log in to view this content.');
+          }
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         return res.json();
       })
       .then((json: object) => {
+        console.log('Received data:', json);
         if (json) {
           // convert the JSON data to our typed array
           this.items = Array.isArray(json) ? json : [json];
+          console.log('Processed items:', this.items);
         }
       })
       .catch(error => {
         console.error('Error loading data:', error);
+        this.error = error.message;
+      })
+      .finally(() => {
+        this.loading = false;
       });
   }
 
@@ -187,8 +240,16 @@ export class ListElement extends LitElement {
   }
 
   render() {
+    if (this.loading) {
+      return html`<div class="loading">Loading...</div>`;
+    }
+
+    if (this.error) {
+      return html`<div class="error">${this.error}</div>`;
+    }
+
     if (!this.items.length) {
-      return html`<p>Loading...</p>`;
+      return html`<div class="loading">No items found</div>`;
     }
 
     return html`

@@ -1,4 +1,4 @@
-import{i as l,r as h,b as u,x as m,n as r,d as g,a as y}from"./reset.css-6vUoClCO.js";import{c as f,L as b}from"./elem-list-bm3u-S8t.js";import{H as d}from"./header-m5_XIgl8.js";var v=Object.defineProperty,s=(o,n,p,w)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(n,p,e)||e);return e&&v(n,p,e),e};const a=class a extends l{constructor(){super(...arguments),this.address="",this.contact="",this.website="",this.cuisine=""}render(){return m`
+import{i as l,r as h,b as u,x as m,n as r,d as g,a as y}from"./reset.css-6vUoClCO.js";import{c as f,L as b}from"./elem-list-ruPqSYZY.js";import{H as d}from"./header-m5_XIgl8.js";var v=Object.defineProperty,s=(o,n,p,w)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(n,p,e)||e);return e&&v(n,p,e),e};const a=class a extends l{constructor(){super(...arguments),this.address="",this.contact="",this.website="",this.cuisine=""}render(){return m`
       <div class="card">
         <h2><slot name="name">Restaurant Name</slot></h2>
         <p><strong>Address:</strong> ${this.address}</p>

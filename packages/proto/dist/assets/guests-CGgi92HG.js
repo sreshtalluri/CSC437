@@ -1,4 +1,4 @@
-import{i as d,r as v,b as c,x as h,n as l,d as f,a as u}from"./reset.css-6vUoClCO.js";import{H as m}from"./header-m5_XIgl8.js";import{c as y,L as g}from"./elem-list-bm3u-S8t.js";var b=Object.defineProperty,p=(i,s,o,x)=>{for(var r=void 0,e=i.length-1,n;e>=0;e--)(n=i[e])&&(r=n(s,o,r)||r);return r&&b(s,o,r),r};const a=class a extends d{constructor(){super(...arguments),this.email="",this.rsvp=""}render(){return h`
+import{i as d,r as v,b as c,x as h,n as l,d as f,a as u}from"./reset.css-6vUoClCO.js";import{H as m}from"./header-m5_XIgl8.js";import{c as y,L as g}from"./elem-list-ruPqSYZY.js";var b=Object.defineProperty,p=(i,s,o,x)=>{for(var r=void 0,e=i.length-1,n;e>=0;e--)(n=i[e])&&(r=n(s,o,r)||r);return r&&b(s,o,r),r};const a=class a extends d{constructor(){super(...arguments),this.email="",this.rsvp=""}render(){return h`
       <div class="card">
         <h2><slot name="name">Guest Name</slot></h2>
         <p>

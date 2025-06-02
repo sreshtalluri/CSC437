@@ -130,3 +130,5 @@ export class LoginFormElement extends LitElement {
     }
   }
 }
+
+customElements.define("login-form", LoginFormElement);

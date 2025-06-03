@@ -15,10 +15,12 @@
   <script type="module">
     import { define, Auth } from "@calpoly/mustang";
     import { HeaderElement } from "/src/header.js";
+    import { IndexElement } from "/src/index.js";
 
     define({
       "mu-auth": Auth.Provider,
-      "event-header": HeaderElement
+      "event-header": HeaderElement,
+      "index-element": IndexElement
     });
 
     HeaderElement.initializeOnce();
@@ -29,14 +31,7 @@
     <event-header icon="icon-event"></event-header>
 
     <main>
-      <div class="card host-details">
-        <h1>Host Details</h1>
-        <div class="host-info">
-          <p>Name: [Host Name]</p>
-          <p>Contact: [Host Contact]</p>
-          <p>Role: [Host Role]</p>
-        </div>
-      </div>
+      <index-element src="/api/profiles"></index-element>
 
       <h2>Plan Your Event</h2>
       <div class="navigation-grid">

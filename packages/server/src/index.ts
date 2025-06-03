@@ -5,6 +5,7 @@ import photographers from "./routes/photographers";
 import videographers from "./routes/videographers";
 import guests from "./routes/guests";
 import restaurants from "./routes/restaurants";
+import profiles from "./routes/profiles";
 import auth, { authenticateUser } from "./routes/auth";
 
 const app = express();
@@ -21,6 +22,7 @@ app.use("/api/photographers", authenticateUser, photographers);
 app.use("/api/videographers", authenticateUser, videographers);
 app.use("/api/guests", authenticateUser, guests);
 app.use("/api/restaurants", authenticateUser, restaurants);
+app.use("/api/profiles", authenticateUser, profiles);
 app.use("/auth", auth);
 
 app.listen(port, () => {

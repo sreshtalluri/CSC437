@@ -28,6 +28,7 @@ var import_photographers = __toESM(require("./routes/photographers"));
 var import_videographers = __toESM(require("./routes/videographers"));
 var import_guests = __toESM(require("./routes/guests"));
 var import_restaurants = __toESM(require("./routes/restaurants"));
+var import_profiles = __toESM(require("./routes/profiles"));
 var import_auth = __toESM(require("./routes/auth"));
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
@@ -41,6 +42,7 @@ app.use("/api/photographers", import_auth.authenticateUser, import_photographers
 app.use("/api/videographers", import_auth.authenticateUser, import_videographers.default);
 app.use("/api/guests", import_auth.authenticateUser, import_guests.default);
 app.use("/api/restaurants", import_auth.authenticateUser, import_restaurants.default);
+app.use("/api/profiles", import_auth.authenticateUser, import_profiles.default);
 app.use("/auth", import_auth.default);
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

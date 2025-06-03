@@ -1,4 +1,4 @@
-import{i as h,r as d,b as y,x as m,n as s,d as f,a as v}from"./reset.css-6vUoClCO.js";import{c as g,L as b}from"./elem-list-ruPqSYZY.js";import{H as l}from"./header-m5_XIgl8.js";var u=Object.defineProperty,a=(o,n,c,w)=>{for(var t=void 0,r=o.length-1,p;r>=0;r--)(p=o[r])&&(t=p(n,c,t)||t);return t&&u(n,c,t),t};const i=class i extends h{constructor(){super(...arguments),this.contact="",this.website="",this.specialty=""}render(){return m`
+import{i as h,r as d,a as y,x as m,n as s,d as f,c as v}from"./reset.css-DieTGmEc.js";import{c as g,H as l}from"./card.css-C-aVfMcN.js";import{L as u}from"./elem-list-BopD4chd.js";var b=Object.defineProperty,a=(o,n,c,w)=>{for(var t=void 0,r=o.length-1,p;r>=0;r--)(p=o[r])&&(t=p(n,c,t)||t);return t&&b(n,c,t),t};const i=class i extends h{constructor(){super(...arguments),this.contact="",this.website="",this.specialty=""}render(){return m`
       <div class="card">
         <h2><slot name="name">Videographer Name</slot></h2>
         <p>
@@ -35,4 +35,4 @@ import{i as h,r as d,b as y,x as m,n as s,d as f,a as v}from"./reset.css-6vUoClC
     a:hover {
       text-decoration: underline;
     }
-  `];let e=i;a([s({type:String,attribute:"contact"})],e.prototype,"contact");a([s({type:String,attribute:"website"})],e.prototype,"website");a([s({type:String,attribute:"specialty"})],e.prototype,"specialty");f({"mu-auth":v.Provider,"videographer-card":e,"list-view":b,"event-header":l});l.initializeOnce();
+  `];let e=i;a([s({type:String,attribute:"contact"})],e.prototype,"contact");a([s({type:String,attribute:"website"})],e.prototype,"website");a([s({type:String,attribute:"specialty"})],e.prototype,"specialty");f({"mu-auth":v.Provider,"videographer-card":e,"list-view":u,"event-header":l});l.initializeOnce();

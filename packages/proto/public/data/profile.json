@@ -1,0 +1,41 @@
+[ 
+  {
+    "username": "sgoel",
+    "firstName": "Sahil",
+    "lastName": "Goel",
+    "email": "sgoel@calpoly.edu",
+    "phone": "805-756-2000",
+    "role": "Host",
+    "event_name": "Wedding",
+    "event_date": "2024-07-15",
+    "event_time": "4:00 PM",
+    "event_description": "A beautiful summer wedding celebration with close friends and family",
+    "event_status": "upcoming"
+  },
+  {
+    "username": "jane.smith",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "phone": "555-0124",
+    "role": "Host",
+    "event_name": "Corporate Gala 2024",
+    "event_date": "2024-09-20",
+    "event_time": "7:00 PM",
+    "event_description": "Annual corporate gala for networking and celebration",
+    "event_status": "upcoming"
+  },
+  {
+    "username": "mike.wilson",
+    "firstName": "Mike",
+    "lastName": "Wilson",
+    "email": "mike.wilson@example.com",
+    "phone": "555-0125",
+    "role": "Host",
+    "event_name": "Birthday Bash",
+    "event_date": "2024-05-10",
+    "event_time": "6:00 PM",
+    "event_description": "30th birthday celebration with live music and dinner",
+    "event_status": "upcoming"
+  }
+]

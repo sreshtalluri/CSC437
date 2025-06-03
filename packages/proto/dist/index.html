@@ -12,23 +12,16 @@
   <link rel="stylesheet" href="/styles/page.css">
   <link rel="stylesheet" href="/styles/navigation.css">
   <title>Event Planner</title>
-  <script type="module" crossorigin src="/assets/main-C3HGJdDj.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
-  <link rel="modulepreload" crossorigin href="/assets/header-m5_XIgl8.js">
+  <script type="module" crossorigin src="/assets/main-ChXK-AWO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-DieTGmEc.js">
+  <link rel="modulepreload" crossorigin href="/assets/card.css-C-aVfMcN.js">
 </head>
 <body>
   <mu-auth provides="eplan:auth">
     <event-header icon="icon-event"></event-header>
 
     <main>
-      <div class="card host-details">
-        <h1>Host Details</h1>
-        <div class="host-info">
-          <p>Name: [Host Name]</p>
-          <p>Contact: [Host Contact]</p>
-          <p>Role: [Host Role]</p>
-        </div>
-      </div>
+      <index-element src="/api/profiles"></index-element>
 
       <h2>Plan Your Event</h2>
       <div class="navigation-grid">

@@ -1,4 +1,4 @@
-import{i as l,r as h,b as u,x as m,n as r,d as g,a as y}from"./reset.css-6vUoClCO.js";import{c as f,L as b}from"./elem-list-ruPqSYZY.js";import{H as d}from"./header-m5_XIgl8.js";var v=Object.defineProperty,s=(o,n,p,w)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(n,p,e)||e);return e&&v(n,p,e),e};const a=class a extends l{constructor(){super(...arguments),this.address="",this.contact="",this.website="",this.cuisine=""}render(){return m`
+import{i as l,r as h,a as u,x as m,n as r,d as g,c as y}from"./reset.css-DieTGmEc.js";import{c as f,H as d}from"./card.css-C-aVfMcN.js";import{L as v}from"./elem-list-BopD4chd.js";var b=Object.defineProperty,s=(o,n,p,w)=>{for(var e=void 0,i=o.length-1,c;i>=0;i--)(c=o[i])&&(e=c(n,p,e)||e);return e&&b(n,p,e),e};const a=class a extends l{constructor(){super(...arguments),this.address="",this.contact="",this.website="",this.cuisine=""}render(){return m`
       <div class="card">
         <h2><slot name="name">Restaurant Name</slot></h2>
         <p><strong>Address:</strong> ${this.address}</p>
@@ -30,4 +30,4 @@ import{i as l,r as h,b as u,x as m,n as r,d as g,a as y}from"./reset.css-6vUoClC
     a:hover {
       text-decoration: underline;
     }
-  `];let t=a;s([r({type:String,attribute:"address"})],t.prototype,"address");s([r({type:String,attribute:"contact"})],t.prototype,"contact");s([r({type:String,attribute:"website"})],t.prototype,"website");s([r({type:String,attribute:"cuisine"})],t.prototype,"cuisine");g({"mu-auth":y.Provider,"restaurant-card":t,"list-view":b,"event-header":d});d.initializeOnce();
+  `];let t=a;s([r({type:String,attribute:"address"})],t.prototype,"address");s([r({type:String,attribute:"contact"})],t.prototype,"contact");s([r({type:String,attribute:"website"})],t.prototype,"website");s([r({type:String,attribute:"cuisine"})],t.prototype,"cuisine");g({"mu-auth":y.Provider,"restaurant-card":t,"list-view":v,"event-header":d});d.initializeOnce();

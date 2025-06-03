@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
   <title>Event Details</title>
-  <script type="module" crossorigin src="/assets/event-C3HGJdDj.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/reset.css-6vUoClCO.js">
-  <link rel="modulepreload" crossorigin href="/assets/header-m5_XIgl8.js">
+  <script type="module" crossorigin src="/assets/event-BQQzEJXA.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/reset.css-DieTGmEc.js">
+  <link rel="modulepreload" crossorigin href="/assets/card.css-C-aVfMcN.js">
 </head>
 <body>
   <mu-auth provides="eplan:auth">
@@ -21,20 +21,7 @@
 
     <main>
       <h1>Event Details</h1>
-      
-      <div class="card-grid">
-        <div class="card">
-          <h2>Event Information</h2>
-          <p><strong>Title:</strong> Annual Company Gala</p>
-          <p><strong>Date:</strong> December 15, 2024</p>
-          <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
-        </div>
-        
-        <div class="card">
-          <h2>Description</h2>
-          <p>Join us for an evening of celebration and networking at our annual company gala. The event will feature dinner, entertainment, and awards ceremony.</p>
-        </div>
-      </div>
+      <event-element src="/api/profiles"></event-element>
 
       <div class="back-to-host">
         <a href="index.html">

@@ -79,7 +79,6 @@ import{i as g,O as u,r as m,a as f,x as l,n as v,b as h,d as b,c as y}from"./res
 
     .edit-button:hover {
       background-color: #2c5282;
-      transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 

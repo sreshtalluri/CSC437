@@ -1,4 +1,4 @@
-import{i as p,O as g,r as v,a as f,x as d,n as m,b as l,d as b,c as _}from"./reset.css-DieTGmEc.js";import{c as y,H as u}from"./card.css-p7RGg8cR.js";var x=Object.defineProperty,n=(c,s,e,a)=>{for(var r=void 0,o=c.length-1,t;o>=0;o--)(t=c[o])&&(r=t(s,e,r)||r);return r&&x(s,e,r),r};const h=class h extends p{constructor(){super(...arguments),this.loading=!0,this._authObserver=new g(this,"eplan:auth")}get authorization(){var e;if(!((e=this._user)!=null&&e.authenticated)){console.log("User not authenticated");return}return{Authorization:`Bearer ${this._user.token}`}}connectedCallback(){super.connectedCallback(),this._authObserver.observe(s=>{var e;console.log("Auth state changed:",s),this._user=s.user,(e=this._user)!=null&&e.authenticated&&this.src?this.hydrate(this.src):this.loading=!1})}hydrate(s){var r,o;this.loading=!0,this.error=void 0,console.log("Fetching from:",s),console.log("Auth state:",(r=this._user)!=null&&r.authenticated?"Authenticated":"Not authenticated"),console.log("User:",this._user);const e=(o=this._user)==null?void 0:o.username;if(!e){console.error("No username found"),this.loading=!1;return}const a=this.authorization?{headers:this.authorization}:void 0;console.log("Request headers:",a),fetch("/api/profiles?username="+e,a).then(t=>{if(console.log("Response status:",t.status),console.log("Response headers:",Object.fromEntries(t.headers.entries())),!t.ok)throw new Error(`HTTP error! status: ${t.status}`);return t.json()}).then(t=>{console.log("Profile data:",t),this.profile=t,this.loading=!1}).catch(t=>{console.error("Error loading profile:",t),this.error=t.message,this.loading=!1})}render(){var s,e,a,r,o;return this.loading?d`
+import{i as p,O as g,r as v,a as f,x as d,n as m,b as l,d as b,c as _}from"./reset.css-DieTGmEc.js";import{c as y,H as u}from"./card.css-p7RGg8cR.js";var x=Object.defineProperty,n=(c,o,e,a)=>{for(var r=void 0,s=c.length-1,t;s>=0;s--)(t=c[s])&&(r=t(o,e,r)||r);return r&&x(o,e,r),r};const h=class h extends p{constructor(){super(...arguments),this.loading=!0,this._authObserver=new g(this,"eplan:auth")}get authorization(){var e;if(!((e=this._user)!=null&&e.authenticated)){console.log("User not authenticated");return}return{Authorization:`Bearer ${this._user.token}`}}connectedCallback(){super.connectedCallback(),this._authObserver.observe(o=>{var e;console.log("Auth state changed:",o),this._user=o.user,(e=this._user)!=null&&e.authenticated&&this.src?this.hydrate(this.src):this.loading=!1})}hydrate(o){var r,s;this.loading=!0,this.error=void 0,console.log("Fetching from:",o),console.log("Auth state:",(r=this._user)!=null&&r.authenticated?"Authenticated":"Not authenticated"),console.log("User:",this._user);const e=(s=this._user)==null?void 0:s.username;if(!e){console.error("No username found"),this.loading=!1;return}const a=this.authorization?{headers:this.authorization}:void 0;console.log("Request headers:",a),fetch("/api/profiles?username="+e,a).then(t=>{if(console.log("Response status:",t.status),console.log("Response headers:",Object.fromEntries(t.headers.entries())),!t.ok)throw new Error(`HTTP error! status: ${t.status}`);return t.json()}).then(t=>{console.log("Profile data:",t),this.profile=t,this.loading=!1}).catch(t=>{console.error("Error loading profile:",t),this.error=t.message,this.loading=!1})}render(){var o,e,a,r,s;return this.loading?d`
         <div class="card-grid">
           <div class="card">
             <h2>Event Information</h2>
@@ -12,7 +12,7 @@ import{i as p,O as g,r as v,a as f,x as d,n as m,b as l,d as b,c as _}from"./res
             <p>Loading...</p>
           </div>
         </div>
-      `:(s=this._user)!=null&&s.authenticated?d`
+      `:(o=this._user)!=null&&o.authenticated?d`
       <div class="card-grid">
         <div class="card">
           <h2>Event Information</h2>
@@ -29,7 +29,7 @@ import{i as p,O as g,r as v,a as f,x as d,n as m,b as l,d as b,c as _}from"./res
         
         <div class="card">
           <h2>Description</h2>
-          <p>${(o=this.profile)==null?void 0:o.event_description}</p>
+          <p>${(s=this.profile)==null?void 0:s.event_description}</p>
         </div>
       </div>
     `:d`
@@ -73,7 +73,6 @@ import{i as p,O as g,r as v,a as f,x as d,n as m,b as l,d as b,c as _}from"./res
 
     .edit-button:hover {
       background-color: #2c5282;
-      transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 

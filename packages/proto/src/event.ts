@@ -80,7 +80,6 @@ export class EventElement extends LitElement {
 
     .edit-button:hover {
       background-color: #2c5282;
-      transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 

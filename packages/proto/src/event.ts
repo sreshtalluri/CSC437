@@ -61,6 +61,33 @@ export class EventElement extends LitElement {
       font-size: 1.8rem;
       margin: 0 0 1.5rem 0;
     }
+
+    .edit-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      margin-top: auto;
+    }
+
+    .edit-button:hover {
+      background-color: #2c5282;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-button svg {
+      width: 20px;
+      height: 20px;
+    }
   `];
 
   connectedCallback() {
@@ -154,6 +181,12 @@ export class EventElement extends LitElement {
           <p><strong>Title:</strong> ${this.profile?.event_name}</p>
           <p><strong>Date:</strong> ${this.profile?.event_date}</p>
           <p><strong>Time:</strong> ${this.profile?.event_time}</p>
+          <a href="/event-edit.html" class="edit-button">
+            <svg viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+            </svg>
+            Edit Event
+          </a>
         </div>
         
         <div class="card">

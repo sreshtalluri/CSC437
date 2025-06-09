@@ -10,29 +10,28 @@
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/page.css">
-  <title>Restaurants</title>
-  <script type="module" crossorigin src="/assets/restaurant-yhgeZaez.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/reset.css-DieTGmEc.js">
-  <link rel="modulepreload" crossorigin href="/assets/card.css-p7RGg8cR.js">
-  <link rel="modulepreload" crossorigin href="/assets/elem-list-mX94c9nv.js">
+  <title>Edit Host Details</title>
+  <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    import { HeaderElement } from "/src/header.js";
+    import { HostEditElement } from "/src/host-edit.js";
+
+    define({
+      "mu-auth": Auth.Provider,
+      "event-header": HeaderElement,
+      "host-edit-element": HostEditElement
+    });
+
+    HeaderElement.initializeOnce();
+  </script>
 </head>
 <body>
   <mu-auth provides="eplan:auth">
-    <event-header icon="icon-restaurant"></event-header>
+    <event-header icon="icon-event"></event-header>
 
     <main>
-      <h1>Available Restaurants</h1>
-
-      <list-view src="/api/restaurants"></list-view>
-
-      <div class="back-to-host">
-        <a href="index.html">
-          <svg class="icon">
-            <use href="/icons/events.svg#icon-host" />
-          </svg>
-          Back to Host
-        </a>
-      </div>
+      <h1>Edit Host Details</h1>
+      <host-edit-element src="/api/profiles"></host-edit-element>
     </main>
 
     <footer>
@@ -53,4 +52,4 @@
     <script src="/scripts/darkmode.js"></script>
   </mu-auth>
 </body>
-</html>
+</html> 

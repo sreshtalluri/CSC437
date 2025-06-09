@@ -35,7 +35,7 @@ import{i as u,O as h,h as p,r as b,a as l,e as v,x as o,b as g,n as m}from"./res
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     .card:hover {

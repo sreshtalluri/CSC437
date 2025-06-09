@@ -1,4 +1,4 @@
-import{i as h,r as d,a as y,x as m,n as s,d as f,c as g}from"./reset.css-DieTGmEc.js";import{c as v,H as l}from"./card.css-C-aVfMcN.js";import{L as u}from"./elem-list-BopD4chd.js";var b=Object.defineProperty,a=(o,n,c,w)=>{for(var t=void 0,r=o.length-1,p;r>=0;r--)(p=o[r])&&(t=p(n,c,t)||t);return t&&b(n,c,t),t};const i=class i extends h{constructor(){super(...arguments),this.contact="",this.website="",this.specialty=""}render(){return m`
+import{i as h,r as d,a as y,x as m,n as s,d as f,c as g}from"./reset.css-DieTGmEc.js";import{c as v,H as l}from"./card.css-p7RGg8cR.js";import{L as u}from"./elem-list-mX94c9nv.js";var b=Object.defineProperty,a=(o,n,c,w)=>{for(var t=void 0,r=o.length-1,p;r>=0;r--)(p=o[r])&&(t=p(n,c,t)||t);return t&&b(n,c,t),t};const i=class i extends h{constructor(){super(...arguments),this.contact="",this.website="",this.specialty=""}render(){return m`
       <div class="card">
         <h2><slot name="name">Photographer Name</slot></h2>
         <p>

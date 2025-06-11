@@ -7,6 +7,7 @@ import express, {
 import jwt from "jsonwebtoken";
 
 import credentials from "../services/credential-svc";
+import profileService from "../services/profile-svc";
 
 const router = express.Router();
 
@@ -24,7 +25,8 @@ router.post("/register", (req: Request, res: Response) => {
   } else {
     credentials
       .create(username, password)
-      .then((creds) => generateAccessToken(creds.username))
+      .then(() => profileService.create(username))
+      .then(() => generateAccessToken(username))
       .then((token) => {
         res.status(201).send({ token: token });
       })

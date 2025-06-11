@@ -25,6 +25,23 @@ const ProfileSchema = new Schema<Profile>(
 
 const ProfileModel = model<Profile>("Profile", ProfileSchema);
 
+function create(username: string): Promise<Profile> {
+  const newProfile = new ProfileModel({
+    username,
+    firstName: 'New',
+    lastName: 'User',
+    email: `${username}@example.com`,
+    phone: '123-456-7890',
+    role: 'user',
+    event_name: 'Welcome Event',
+    event_date: new Date().toISOString().split('T')[0], // Today's date
+    event_time: '12:00 PM',
+    event_description: 'Welcome to the Event Planner! This is your first event. Feel free to edit or delete it.',
+    event_status: 'upcoming'
+  });
+  return newProfile.save();
+}
+
 function get(username: string): Promise<Profile> {
   return ProfileModel.findOne({ username })
     .then((profile) => {
@@ -63,4 +80,4 @@ function updateEvent(username: string, eventData: Partial<Profile>): Promise<Pro
   });
 }
 
-export default { get, update, updateEvent }; 
+export default { create, get, update, updateEvent }; 

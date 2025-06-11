@@ -44,6 +44,23 @@ const ProfileSchema = new import_mongoose.Schema(
   { collection: "profiles" }
 );
 const ProfileModel = (0, import_mongoose.model)("Profile", ProfileSchema);
+function create(username) {
+  const newProfile = new ProfileModel({
+    username,
+    firstName: "New",
+    lastName: "User",
+    email: `${username}@example.com`,
+    phone: "123-456-7890",
+    role: "user",
+    event_name: "Welcome Event",
+    event_date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+    // Today's date
+    event_time: "12:00 PM",
+    event_description: "Welcome to the Event Planner! This is your first event. Feel free to edit or delete it.",
+    event_status: "upcoming"
+  });
+  return newProfile.save();
+}
 function get(username) {
   return ProfileModel.findOne({ username }).then((profile) => {
     if (!profile) throw `Profile for ${username} not found`;
@@ -78,4 +95,4 @@ function updateEvent(username, eventData) {
     return updated;
   });
 }
-var profile_svc_default = { get, update, updateEvent };
+var profile_svc_default = { create, get, update, updateEvent };

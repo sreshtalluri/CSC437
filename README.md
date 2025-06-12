@@ -14,7 +14,7 @@ This project is a web application that allows users to plan events. As of now, i
 4. Run `npm install` in the server directory
 5. Run `npm run dev` in the server directory
 
-Since I have already ran `npm run build` once, I have included a prebuilt version of the project in the `packages/proto/dist` directory. So, if you want to run the project, you just have to run `npm run dev` in the server directory.
+**NOTE:** Since I have already ran `npm run build` once, I have included a prebuilt version of the project in the `packages/proto/dist` directory. So, if you want to run the project, you just have to run `npm run dev` in the server directory.
 
 OR
 
